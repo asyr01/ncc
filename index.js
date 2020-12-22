@@ -1,6 +1,7 @@
-const Person = require('./person'); //Common.JS
-// import Person from './person' // ES6
+const Logger = require('./logger');
 
-const person1 = new Person('Ali Sayar', 21);
+const logger = new Logger();
 
-person1.greeting();
+logger.on('message', (data) => console.log('Called Listener', data));
+
+logger.log('Hello World');
